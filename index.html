@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | FAQ accordion</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; margin-top: 30px; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    body{
+      
+      box-sizing: border-box;
+      font-family: sans-serif;
+      background-color: hsl(275, 100%, 97%);
+     }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 200px; /* Set the desired height for the background image */
+      background-image: url('assets/images/background-pattern-desktop.svg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -1; /* Ensure it stays behind any content */
+    }
+
+
+    .container{
+      background-color: hsl(0, 0%, 100%);
+      width: 500px;
+      border-radius: 10px;
+      padding: 10px;
+      margin: auto;
+      margin-top: 90px;
+    }
+    h1{
+      margin-left: 30px;
+      font-weight: 900;
+      color:hsl(292, 42%, 14%) ;
+     
+    }
+
+    .star{
+      margin-top: 0px;
+      margin-right: 20px;
+      padding: 0;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      top:7px;
+
+    }
+    
+    li{
+      list-style-type:none ;
+    }
+    li .question:hover, .question1:hover{
+      color:rgb(232, 13, 232) ;
+    }
+    .question1{
+      color: hsl(292, 42%, 14%);
+      font-weight: bold;
+      font-size: 13px;
+      line-height:40px ;
+    }
+
+
+    .question{
+      color: hsl(292, 42%, 14%);
+      font-weight: bold;
+      font-size: 13px;
+      line-height: 40px;
+    }
+
+    p img{
+      position:relative;
+      top:5px;
+     float:right;
+     margin-right: 20px;
+    }
+
+    .show-answer{
+      font-size: 12.5px;
+      line-height: 20px;
+      display: block;
+
+    }
+
+    .answer{
+      display: none;
+      font-size: 11px;
+    }
+    
+    p{
+      font-size: 12.5px;
+    }
+  
+  .question img {
+      cursor: pointer; /* Indicate that the image is clickable */
+  }
+
+  @media (max-width:1025px){
+    .container{
+      width: 600px;
+      
+    }
+    .question1{
+      font-size: 18px;
+    }
+    .question{
+      font-size: 18px;
+    }
+    .show-answer{
+      font-size: 18px;
+    }
+   
+    
+  }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <h1><img class="star" src="./assets/images/icon-star.svg" alt="">FAQs</h1>
+    <div>
+      <ul>
+        <li>
+          <p class="question1">What is Frontend Mentor, and how will it help me? <img src="/assets/images/icon-minus.svg" alt="" onclick="toggleParagraph(this)"></p>
+          <p class="show-answer">Frontend Mentor offers realistic coding challenges to help developers improve their 
+            frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for 
+            all levels and ideal for portfolio building.</p>
+        </li>
+        <li>
+          <p class="question">Is Frontend Mentor free? <img src="/assets/images/icon-plus.svg" alt="" onclick="toggleParagraph(this)"> </p>
+          <p class="answer">Yes, Frontend Mentor offers both free and premium coding challenges, with the free 
+            option providing access to a range of projects suitable for all skill levels.</p>
+        </li>
+        <li>
+          <p class="question">Can I use Frontend Mentor projects in my portfolio? <img src="/assets/images/icon-plus.svg" alt="" onclick="toggleParagraph(this)"></p>
+          <p class="answer">Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent
+            way to showcase your skills to potential employers!</p>
+        </li>
+        <li>
+          <p class="question">How can I get help if I'm stuck on a Frontend Mentor challenge? <img src="/assets/images/icon-plus.svg" alt="" onclick="toggleParagraph(this)"></p>
+          <p class="answer">The best place to get help is inside Frontend Mentor's Discord community. There's a help 
+            channel where you can ask questions and seek support from other community members.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+ 
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Abisha A</a>.
+  </div>
+</body>
+<script>
+  function toggleParagraph(img) {
+      var answer = img.parentNode.nextElementSibling;
+      
+      if (answer) {
+          answer.classList.toggle('answer');
+          img.src = answer.classList.contains('answer') ? '/assets/images/icon-plus.svg' : '/assets/images/icon-minus.svg';
+      }
+  }
+</script>
+</html>
